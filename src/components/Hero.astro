@@ -42,9 +42,9 @@ const { title, imageUrl, imageAlt, ctaText, ctaLink } = Astro.props;
         <Image
           src={imageUrl}
           alt={imageAlt}
-          widths={[400, 800, 1200]}
-          sizes="(max-width: 768px) 100vw, 50vw"
-          class="rounded-lg shadow-lg object-cover w-full h-auto"
+          widths={[128, 256]}
+          sizes="128px"
+          class="mx-auto md:mx-auto w-64 h-64 object-contain"
         />
       </div>
     </div>

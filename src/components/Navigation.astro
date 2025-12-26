@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import firmaLogo from "../assets/firma-logo.png";
+
 // Component Script (Astro frontmatter)
 const navItems = [
   { name: "Inicio", href: "/" },
@@ -11,69 +14,78 @@ const navItems = [
 
 <nav class="bg-gray-800 p-4 shadow-md">
   <div class="container mx-auto flex justify-between items-center">
-    <a href="/" class="text-white text-lg font-semibold">My Logo</a>
+    <a href="/" class="text-white text-lg font-semibold">
+      <Image
+        src={firmaLogo}
+        alt="Logo de la UNSJ - Firma Digital"
+        widths={[150, 300]}
+        sizes="300px"
+        class="inline-block h-16 w-68 mr-2"
+      />
+    </a>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-4">
+          {
+            navItems.map((item) => (
+              <a
+                href={item.href}
+                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md"
+              >
+                {item.name}
+              </a>
+            ))
+          }
+        </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex space-x-4">
-      {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md"
+        <!-- Mobile Menu Button (will be handled by JS) -->
+        <div class="md:hidden">
+          <button
+            id="menu-button"
+            class="text-gray-300 hover:text-white focus:outline-none"
           >
-            {item.name}
-          </a>
-        ))
+            <!-- Menu icon (replace with your SVG or use astro-icon) -->
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"></path></svg
+            >
+          </button>
+        </div>
+      </Image>
+
+      <!-- Mobile Menu (initially hidden) -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-right"
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </div>
+    </>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+      // This script runs on the client side
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener("click", () => {
+          // Toggle the 'hidden' class to show/hide the menu
+          mobileMenu.classList.toggle("hidden");
+        });
       }
-    </div>
-
-    <!-- Mobile Menu Button (will be handled by JS) -->
-    <div class="md:hidden">
-      <button
-        id="menu-button"
-        class="text-gray-300 hover:text-white focus:outline-none"
-      >
-        <!-- Menu icon (replace with your SVG or use astro-icon) -->
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16m-7 6h7"></path></svg
-        >
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu (initially hidden) -->
-  <div id="mobile-menu" class="hidden md:hidden">
-    {
-      navItems.map((item) => (
-        <a
-          href={item.href}
-          class="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-right"
-        >
-          {item.name}
-        </a>
-      ))
-    }
+    </script>
   </div>
 </nav>
-
-<!-- JavaScript for Interactivity -->
-<script>
-  // This script runs on the client side
-  const menuButton = document.getElementById("menu-button");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  if (menuButton && mobileMenu) {
-    menuButton.addEventListener("click", () => {
-      // Toggle the 'hidden' class to show/hide the menu
-      mobileMenu.classList.toggle("hidden");
-    });
-  }
-</script>
