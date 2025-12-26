@@ -1,0 +1,31 @@
+---
+import NormativaCard from "./NormativaCard.astro";
+import { Icon } from "astro-icon/components";
+
+interface NormativaItem {
+  title: string;
+  description: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  icon: string;
+  items: NormativaItem[];
+}
+
+const { title, icon, items } = Astro.props as Props;
+---
+
+<section class="mb-16">
+  <div class="flex items-center justify-center gap-3 mb-8">
+    <Icon name={icon} class="text-red-800 text-3xl" />
+    <h2 class="text-2xl font-semibold text-gray-800">
+      {title}
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {items.map((item) => <NormativaCard {...item} />)}
+  </div>
+</section>

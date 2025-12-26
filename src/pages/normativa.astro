@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import NormativaSection from "../components/NormativaSection.astro";
+---
+
+<Layout>
+  <main class="py-12">
+    <div class="container mx-auto px-4">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">
+        Normativa
+      </h1>
+
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        Marco normativo que regula la implementación y el uso de la Firma
+        Digital, tanto a nivel nacional como dentro de la Universidad Nacional
+        de San Juan.
+      </p>
+
+      <NormativaSection
+        title="Normativa Nacional"
+        icon="scale"
+        items={[
+          {
+            title: "Ley N° 25.506",
+            description: "Ley Nacional de Firma Digital.",
+            url: "https://servicios.infoleg.gob.ar/infolegInternet/anexos/70000-74999/70749/texact.htm",
+          },
+          {
+            title: "Decreto N° 182/19",
+            description: "Reglamentación de la Ley N° 25.506.",
+            url: "https://servicios.infoleg.gob.ar/infolegInternet/anexos/320000-324999/320735/norma.htm",
+          },
+        ]}
+      />
+
+      <NormativaSection
+        title="Normativa Interna UNSJ"
+        icon="building"
+        items={[
+          {
+            title: "Ordenanza N° 12/25-R",
+            description:
+              "Implementación de la Firma Digital en la UNSJ.",
+            url: "https://digesto.unsj.edu.ar/admin/digesto_admin/pdf/ORD12O-25R12519.pdf",
+          },
+          {
+            title: "Resolución N° 1952/25-R",
+            description: "Constitución del Equipo de Trabajo de Firma Digital.",
+            url: "#",
+          },
+        ]}
+      />
+    </div>
+  </main>
+</Layout>

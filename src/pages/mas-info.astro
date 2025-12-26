@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="py-12">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">
+        Firma Digital en la UNSJ
+      </h1>
+
+      <div class="h-1 w-24 bg-red-800 mb-6"></div>
+
+      <p class="text-gray-700 mb-4">
+        La Firma Digital permite firmar documentos electrónicos con la misma
+        validez legal que una firma manuscrita, garantizando seguridad,
+        autenticidad y transparencia en los trámites.
+      </p>
+
+      <p class="text-gray-700 mb-8">
+        En esta sección te explicamos, de forma simple, qué es, para qué sirve y
+        cómo se implementa actualmente en la Universidad Nacional de San Juan.
+      </p>
+      <details class="mb-4 group border border-gray-200 rounded-lg">
+        <summary
+          class="cursor-pointer px-4 py-3 flex justify-between items-center font-semibold text-gray-800 hover:bg-gray-50"
+        >
+          ¿Qué es la Firma Digital?
+          <span class="text-gray-800 group-open:rotate-180 transition">⌄</span>
+        </summary>
+
+        <div class="px-4 py-3 text-gray-700">
+          <p>
+            La Firma Digital es una tecnología basada en mecanismos
+            criptográficos que permite identificar al firmante de un documento y
+            asegurar que su contenido no fue modificado desde el momento de la
+            firma.
+          </p>
+          <p class="mt-2">
+            No se trata de una firma escaneada, sino de un sistema técnico y
+            legal que otorga plena validez jurídica a los documentos
+            electrónicos.
+          </p>
+        </div>
+      </details>
+      <details class="mb-4 group border border-gray-200 rounded-lg">
+        <summary
+          class="cursor-pointer px-4 py-3 flex justify-between items-center font-semibold text-gray-800 hover:bg-gray-50"
+        >
+          ¿Qué garantías ofrece?
+          <span class="text-gray-800 group-open:rotate-180 transition">⌄</span>
+        </summary>
+
+        <div class="px-4 py-3 text-gray-700">
+          <ul class="list-disc list-inside space-y-2">
+            <li>
+              <strong>Autenticidad:</strong> identifica de manera segura al firmante.
+            </li>
+            <li>
+              <strong>Integridad:</strong> el documento no puede ser alterado sin
+              dejar rastro.
+            </li>
+            <li>
+              <strong>No repudio:</strong> el firmante no puede negar su autoría.
+            </li>
+            <li>
+              <strong>Exclusividad:</strong> solo el titular puede usar su firma.
+            </li>
+            <li>
+              <strong>Validez legal:</strong> respaldada por certificados oficiales.
+            </li>
+          </ul>
+        </div>
+      </details>
+      <details class="mb-4 group border border-gray-200 rounded-lg">
+        <summary
+          class="cursor-pointer px-4 py-3 flex justify-between items-center font-semibold text-gray-800 hover:bg-gray-50"
+        >
+          ¿Para qué se usa y cuáles son sus beneficios?
+          <span class="text-gray-800 group-open:rotate-180 transition">⌄</span>
+        </summary>
+
+        <div class="px-4 py-3 text-gray-700">
+          <p class="mb-2">
+            La Firma Digital se puede utilizar en trámites administrativos, contratos,
+            documentación académica y gestiones con organismos públicos.
+          </p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Ahorra tiempo y costos.</li>
+            <li>Evita impresiones y traslados.</li>
+            <li>Brinda mayor seguridad que el papel.</li>
+            <li>Contribuye al cuidado del ambiente.</li>
+          </ul>
+        </div>
+      </details>
+      <div class="mt-10 border-l-4 border-red-800 bg-red-50 p-6 rounded-r-lg">
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">
+          Implementación en la UNSJ
+        </h2>
+
+        <p class="text-gray-700 mb-3">
+          Actualmente, la Universidad Nacional de San Juan brinda el servicio de
+          <strong>Firma Digital mediante token criptográfico</strong> de la AC ONTI, un
+          dispositivo de alta seguridad que almacena el certificado digital del
+          firmante.
+        </p>
+
+        <p class="text-gray-700">
+          Próximamente, se prevé la conformación de la UNSJ como
+          <strong>Autoridad de Registro</strong> ante la AC Modernización PFDR, lo que permitirá incorporar el
+          servicio de <strong>Firma Digital Remota</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

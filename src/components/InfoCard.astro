@@ -1,0 +1,67 @@
+---
+type Accent = "red" | "gray";
+
+interface Props {
+  badge?: string;
+  title: string;
+  description: string;
+  link?: string;
+  linkText?: string;
+  accent?: Accent;
+}
+
+const {
+  badge,
+  title,
+  description,
+  link,
+  linkText,
+  accent = "red",
+} = Astro.props as Props;
+
+const accentClasses: Record<Accent, { badge: string; button: string }> = {
+  red: {
+    badge: "bg-red-100 text-red-800",
+    button: "border-red-800 text-red-800 hover:bg-red-800 hover:text-white",
+  },
+  gray: {
+    badge: "bg-gray-100 text-gray-700",
+    button: "border-gray-400 text-gray-700 hover:bg-gray-100",
+  },
+};
+---
+
+<div
+  class="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col"
+>
+  {
+    badge && (
+      <div class="mb-4">
+        <span
+          class={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${accentClasses[accent].badge}`}
+        >
+          {badge}
+        </span>
+      </div>
+    )
+  }
+
+  <h3 class="text-xl font-semibold text-gray-800 mb-3">
+    {title}
+  </h3>
+
+  <p class="text-gray-600 mb-6 grow">
+    {description}
+  </p>
+
+  {
+    link && linkText && (
+      <a
+        href={link}
+        class={`inline-flex items-center justify-center border font-semibold py-2 px-4 rounded-lg transition ${accentClasses[accent].button}`}
+      >
+        {linkText}
+      </a>
+    )
+  }
+</div>

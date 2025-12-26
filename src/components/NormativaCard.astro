@@ -1,0 +1,24 @@
+---
+const { title, description, url, highlight = false } = Astro.props;
+---
+
+<a
+  href={url}
+  target={url.startsWith("http") ? "_blank" : undefined}
+  rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
+  class={`block rounded-lg p-6 shadow-sm border transition
+    ${
+      highlight
+        ? "bg-red-800 text-white border-red-800 hover:bg-red-700"
+        : "bg-white text-gray-800 border-gray-200 hover:border-red-800"
+    }
+  `}
+>
+  <h3 class={`text-lg font-semibold mb-1 ${highlight ? "text-white" : ""}`}>
+    {title}
+  </h3>
+
+  <p class={`text-sm ${highlight ? "text-red-100" : "text-gray-600"}`}>
+    {description}
+  </p>
+</a>
