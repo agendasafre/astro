@@ -1,0 +1,104 @@
+---
+import ProcedureStep from "./ProcedureStep.astro";
+import AnchorLink from "../AnchorLink.astro";
+---
+
+<h2 class="text-2xl font-semibold text-gray-800 mb-6">
+  Pasos para solicitar la Firma Digital
+</h2>
+
+<ol class="space-y-6">
+  <ProcedureStep number={1} title="Completar el formulario de solicitud">
+    <p>
+      Completar el formulario de la AC ONTI
+      <a
+        href="https://pki.jgm.gov.ar/app/Signature/Request/Create/CertificateRequest.aspx"
+        target="_blank"
+        class="text-red-800 font-medium hover:text-red-700 no-underline"
+      >
+        “Solicitud de Certificado”
+      </a>.
+    </p>
+
+    <ul class="list-disc list-inside space-y-1 mt-2">
+      <li>Seleccionar “Ninguna” en Aplicación.</li>
+      <li>
+        Elegir “Universidad Nacional de San Juan” como Autoridad de Registro.
+      </li>
+      <li>Completar los datos de organización con “No aplica”.</li>
+      <li>Verificar que los datos coincidan exactamente con el DNI.</li>
+    </ul>
+  </ProcedureStep>
+
+  <ProcedureStep
+    number={2}
+    title="Confirmar la solicitud por correo electrónico"
+  >
+    <p>
+      Dentro de las 24 horas recibirá un correo para confirmar la solicitud. De
+      no hacerlo, la misma caducará.
+    </p>
+  </ProcedureStep>
+
+  <ProcedureStep number={3} title="Solicitar un turno">
+    <p>
+      Una vez confirmada la solicitud, deberá reservar un turno a través del <a
+        href="https://calendar.app.google/ePDN6BhkFSmT9DkEA"
+        target="_blank"
+        class="text-red-800 font-medium hover:text-red-700 no-underline"
+        >turnero</a
+      > habilitado a tal fin.
+    </p>
+  </ProcedureStep>
+
+  <ProcedureStep number={4} title="Presentarse en la Oficina de Firma Digital">
+    <p class="text-gray-700 mb-2">
+      Deberá presentarse en la Dirección de Concursos Nodocente (Oficina de
+      Firma Digital) con:
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-1 mb-2">
+      <li>DNI (físico o digital – Mi Argentina).</li>
+      <li>
+        Constancia de CUIL (<a
+          href="https://servicioswww.anses.gob.ar/C2-ConstaCUIL"
+          target="_blank"
+          class="text-red-800 font-medium hover:text-red-700 no-underline"
+          >ANSES</a
+        >).
+      </li>
+      <li>
+        Token criptográfico. <AnchorLink href="#recursos" text="ver opciones" />
+      </li>
+    </ul>
+    <p class="text-gray-700">Debe contar con correo electrónico personal.</p>
+  </ProcedureStep>
+
+  <ProcedureStep number={5} title="Emisión del certificado">
+    <p class="text-gray-700 mb-2">
+      Con la asistencia del/de la Oficial de Registro, deberá:
+    </p>
+    <ul class="list-disc list-inside text-gray-700 space-y-1">
+      <li>Validar los datos ingresados en el formulario de solicitud.</li>
+      <li>Registrar datos biométricos (foto y huella digital).</li>
+      <li>Definir la clave de acceso al token.</li>
+    </ul>
+  </ProcedureStep>
+
+  <ProcedureStep number={6} title="Recepción del certificado">
+    <ol class="list-disc list-inside text-gray-700 space-y-1">
+      <li class="mb-2">
+        El/La Oficial de Registro procederá a emitir el certificado e instalarlo
+        en el token criptográfico.
+      </li>
+      <li class="mb-2">
+        Una vez cargado el certificado, se realizará una prueba de firma digital
+        para verificar su correcto funcionamiento.
+      </li>
+    </ol>
+    <p class="text-gray-700">
+      Finalizado el proceso, recibirá un correo electrónico con el número de certificado y
+      el PIN de revocación. Es fundamental conservar este correo para eventuales
+      gestiones futuras.
+    </p>
+  </ProcedureStep>
+</ol>

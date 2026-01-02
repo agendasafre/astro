@@ -1,0 +1,28 @@
+---
+import AnchorLink from "../AnchorLink.astro";
+---
+
+<div class="mt-12 bg-gray-50 border border-gray-200 rounded-lg p-6">
+  <h2 class="text-xl font-semibold text-gray-800 mb-4">
+    Consideraciones generales
+  </h2>
+
+  <ul class="list-disc list-inside text-gray-700 space-y-2">
+    <li>El certificado será válido mientras dure su vigencia.</li>
+    <li>
+      Deberá instalar los <AnchorLink
+        href="/recursos"
+        text="drivers del token"
+      />.
+    </li>
+    <li>
+      Instalar el
+      <AnchorLink
+        href="https://pki.jgm.gov.ar/app/Signature/Download/CertificateAuthority.aspx"
+        text="Certificado de la AC ONTI"
+      />
+      para validar firmas digitales.
+    </li>
+    <li>Ante dudas, comunicarse con la Oficina de Firma Digital.</li>
+  </ul>
+</div>
